@@ -1,217 +1,504 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WebWellness – Òåõíîëîãèè ïðîäëÿþùèå æèçíü</title>
-    <meta name="description" content="Èäåàëüíîå ðåøåíèå äëÿ òåõ, êòî áåðåæåò çäîðîâüå, ýêîíîìèò âðåìÿ è äåíüãè."/>
-    
+﻿<html dir="ltr" lang="ru-RU"><head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="WebWellness - Технологии продляющие жизнь.">
+
+    <!-- Stylesheets
+	============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700&amp;subset=cyrillic,latin" rel="stylesheet" type="text/css">
+    <!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/swiper.css" type="text/css">
+    <link rel="stylesheet" href="css/dark.css" type="text/css">
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/colors.css" type="text/css">
+    <!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+    <!-- Document Title
+	============================================= -->
+    <title>WebWellness - Технологии продляющие жизнь</title>
+
+
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="WebWellness – Òåõíîëîãèè ïðîäëÿþùèå æèçíü" />
-    <meta property="og:description" content="Èäåàëüíîå ðåøåíèå äëÿ òåõ, êòî áåðåæåò çäîðîâüå, ýêîíîìèò âðåìÿ è äåíüãè" />
-    <meta property="og:image" content="assets/web-share.jpg" />
-    <meta property="og:url" content="https://webwellness1.net/" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WebWellness - Технологии продляющие жизнь">
+    <meta property="og:description" content="Идеальное решение для тех, кто бережет свое здоровье, экономит время и деньги">
+    <meta property="og:image" content="images/web-share.jpg">
 
-    <!-- Twitter Cards -->
+    <!-- Twitter cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WebWellness – Òåõíîëîãèè ïðîäëÿþùèå æèçíü">
-    <meta name="twitter:description" content="Èäåàëüíîå ðåøåíèå äëÿ òåõ, êòî áåðåæåò çäîðîâüå, ýêîíîìèò âðåìÿ è äåíüãè">
-    <meta name="twitter:image" content="assets/web-share.jpg">
+    <meta name="twitter:url" content="https://webwellness.net/">
+    <meta name="twitter:title" content="WebWellness - Технологии продляющие жизнь">
+    <meta name="twitter:description" content="Идеальное решение для тех, кто бережет свое здоровье, экономит время и деньги">
+    <meta name="twitter:image" content="images/web-share.jpg">
 
-    <link rel="icon" href="assets/logo.png" type="image/png"/>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-77002611-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag('js', new Date());
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
+        gtag('config', 'UA-77002611-6');
+    </script>
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            background: white;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .logo {
-            height: 50px;
-        }
-
-        .lang-switcher button {
-            margin-left: 10px;
-            background: none;
-            border: none;
-            color: #007BFF;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .hero {
-            background: linear-gradient(to right, #e0f7fa, #ffffff);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .products {
-            padding: 60px 0;
-            background-color: #fff;
-        }
-
-        .products h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #f1faff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        footer {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-    </style>
 </head>
-<body>
 
-<header>
-    <div class="container">
-        <img src="assets/logo.png" alt="WebWellness Logo" class="logo"/>
-        <nav class="lang-switcher">
-            <button onclick="setLang('ru')">RU</button>
-            <button onclick="setLang('en')">EN</button>
-            <button onclick="setLang('de')">DE</button>
-        </nav>
-    </div>
-</header>
+<body class="stretched no-transition">
 
-<section class="hero">
-    <div class="container">
-        <h1 data-lang="ru">Òåõíîëîãèè<br>ïðîäëåâàþùèå æèçíü</h1>
-        <h1 data-lang="en" style="display:none;">Technologies That Extend Life</h1>
-        <h1 data-lang="de" style="display:none;">Technologien, die das Leben verlangern</h1>
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="clearfix">
 
-        <p data-lang="ru">Èííîâàöèîííûå ïðèáîðû äëÿ çäîðîâüÿ âñåé ñåìüè.</p>
-        <p data-lang="en" style="display:none;">Innovative devices for the health of your whole family.</p>
-        <p data-lang="de" style="display:none;">Innovative Gerate fur die Gesundheit der ganzen Familie.</p>
+        <!-- Header
+		============================================= -->
+        <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
 
-        <a href="#products" class="btn">Ïîäðîáíåå</a>
-    </div>
-</section>
+            <div id="header-wrap">
 
-<section id="products" class="products">
-    <div class="container">
-        <h2 data-lang="ru">Íàøè ïðîäóêòû</h2>
-        <h2 data-lang="en" style="display:none;">Our Products</h2>
-        <h2 data-lang="de" style="display:none;">Unsere Produkte</h2>
+                <div class="container clearfix">
 
-        <div class="product-grid">
-            <div class="product-card">
-                <h3 data-lang="ru">Life Balance</h3>
-                <h3 data-lang="en" style="display:none;">Life Balance</h3>
-                <h3 data-lang="de" style="display:none;">Lebensbalance</h3>
-                <p data-lang="ru">Ïîðòàòèâíîå óñòðîéñòâî äëÿ î÷èùåíèÿ îðãàíèçìà è áîðüáû ñ ïàðàçèòàìè.</p>
-                <p data-lang="en" style="display:none;">Portable device for body cleansing and fighting parasites.</p>
-                <p data-lang="de" style="display:none;">Tragbares Gerat zur Entgiftung des Korpers und Bekampfung von Parasiten.</p>
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+					============================================= -->
+                    <div id="logo">
+                        <a href="/" class="standard-logo" data-dark-logo="logo-light.png" style="width:240px"><img src="logo.png" alt="WEBWELLNESS"></a>
+                        <a href="/" class="retina-logo" data-dark-logo="logo-light.png" style="width:240px"><img src="logo.png" alt="WEBWELLNESS"></a>
+                    </div>
+                    <!-- #logo end -->
+
+                    <!-- Primary Navigation
+					============================================= -->
+                    <nav id="primary-menu" class="dark">
+
+                        <ul>
+                            <li class="current">
+                                <a class="color" href="/">
+                                    <div>Главная</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="history.php">
+                                    <div>История метода</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="prices.php">
+                                    <div>Цены</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reviews.php">
+                                    <div>Отзывы</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacts.php">
+                                    <div>Контакты</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://bc.webwellness.net/">
+                                    <div>Регистрация / Вход</div>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    RU
+                                    <span class="caret"></span>
+                                </a>
+                                
+                                <ul class="dropdown-menu language-dropdown" aria-labelledby="dropdownMenu1">
+
+                                    <li><a href="/de/index.php">DE (Deutsch)</a></li>
+                                    <li><a href="/en/index.php">EN (English)</a></li>
+                                    <li><a href="/pl/index.php">PL (Polski)</a></li>
+                                    <li><a href="/tr/index.php">TR (Türkçe)</a></li>
+
+                                </ul>
+
+                    </li></ul></nav>
+                    <!-- #primary-menu end -->
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <h3 data-lang="ru">Life Expert 3</h3>
-                <h3 data-lang="en" style="display:none;">Life Expert 3</h3>
-                <h3 data-lang="de" style="display:none;">LebensExperte 3</h3>
-                <p data-lang="ru">Äîìàøíÿÿ äèàãíîñòèêà ñîñòîÿíèÿ çäîðîâüÿ ïî 47 ïàðàìåòðàì.</p>
-                <p data-lang="en" style="display:none;">Home diagnostics for health status across 47 organs/systems.</p>
-                <p data-lang="de" style="display:none;">Heimdiagnose des Gesundheitszustands anhand von 47 Organen/Systemen.</p>
+        </header>
+        <!-- #header end -->
+
+        <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix" data-negative-height="-9">
+            <div class="slider-parallax-inner">
+
+                <div class="swiper-container swiper-parent">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide dark">
+                            <div class="container clearfix">
+                                <div class="slider-caption slider-caption-center">
+                                    <h3 data-caption-animate="fadeInUp" class="uppercase"><span style="color:#0096ff;">WEB</span>WELLNESS</h3>
+                                    <h2 data-caption-animate="fadeInUp">Технологии <br>продлевающие жизнь</h2>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <video id="slide-video" poster="images/slide1.jpg" preload="auto" loop="" autoplay="" muted="">
+                                    <source src="images/videos/BG_.mp4" type="video/mp4">
+                                    <source src="images/videos/BG_.webm" type="video/webm">
+                                </video>
+                                <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide dark" style="background-image: url('images/slide-21.jpg'); background-position: center top;">
+                            <div class="container clearfix">
+                                <div class="slider-caption">
+                                    <h2 data-caption-animate="fadeInUp">Life Expert</h2>
+                                    <p data-caption-animate="fadeInUp" data-caption-delay="200" class="t500">В течение
+                                        минуты показатели<br> по 47 органам и системам</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide dark" style="background-image: url('images/pribors/LifeBalance2.png');">
+                            <div class="container clearfix">
+                                <div class="slider-caption ">
+                                    <h2 data-caption-animate="fadeInUp">Life Balance</h2>
+                                    <p data-caption-animate="fadeInUp" data-caption-delay="200" class="t500">Здоровье
+                                        для всей семьи</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+                    <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+                </div>
+
+                <a href="#" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+            </div>
+        </section>
+
+
+        <!-- Content ============================ -->
+        <section id="content">
+
+            <div class="content-wrap nobottompadding">
+
+                <div class="container clearfix">
+                    <div class="row clearfix">
+
+                        <div class="heading-block center">
+                            <h2>Уникальная система <span style="color:#0096ff;">web</span>wellness - технология,
+                                продлевающая жизнь.</h2>
+
+
+                        </div>
+
+                        <div class="col_half nobottommargin notopmargin topmargin-lg">
+                            <a href="21hTY4ic9FXm8mqU" data-lightbox="iframe" style="position: relative;">
+                                <img src="images/pribors/LifeBalance2main.png" alt="Life Balance" class="center-block" data-animate="fadeInLeft">
+                            </a>
+
+                        </div>
+
+                        <div class="col_half nobottommargin notopmargin topmargin-lg col_last text-justify">
+                            <p class="topmargin-sm">Портативное wellness-устройство <b>“Life Balance”</b> предназначено
+                                для эффективной борьбы с паразитами, очищения организма от токсинов и профилактики
+                                многих заболеваний. <br>
+                                С помощью электромагнитных волн, которые по своей частоте совпадают с собственными
+                                колебаниями микроорганизмов, <b>“Life Balance”</b> воздействует на патогенные
+                                микроорганизмы в нашем теле и разрушает их, усиливая эти колебания.</p>
+                            <p>Самое главное, что для человеческого организма данные электромагнитные волны абсолютно
+                                безопасны, т.к. частота жизнедеятельности паразитов не пересекается с частотой
+                                жизнедеятельности человека. <b>“Life balance”</b> совершенно безопасен для организма
+                                человека и воздействует только на паразитов, а его применение не имеет возрастных
+                                ограничений.</p>
+                            <p>Прибор <b>“Life balance”</b> имеет 300 базовых программ, с возможностью расширения до
+                                600. Предусмотрена возможность составления индивидуальной программы с помощью
+                                программного обеспечения содержащего более 5000 программ.</p>
+                            <p><b>Life Balance не является медицинским прибором, поэтому его можно использовать дома без
+                                    назначения врача.</b></p>
+                            <p>Прибор работает в комплексе с прибором веб-клиники <b>Life Expert.</b></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col_half nobottommargin notopmargin topmargin-lg text-justify">
+                            <p class="topmargin-sm"><b>Life Balance Contact</b></p>
+                            <p class="topmargin-sm">Уникальный прибор в линейке WebWellness, объединивший в себе
+                                эндогенное и экзогенное воздействие на организм. Благодаря прямому контакту, он
+                                стимулирует собственные ресурсы организма в разы сильнее существующих аналогов.</p>
+                            <p>Прибор обеспечивает прямой контакт электродов и за счет возникновения замкнутого контура,
+                                записывает собственные электромагнитные сигналы организма, фильтрует и инвертирует их.
+                                Это способствует саморегуляции и подавлению чужеродных сигналов возбудителей.</p>
+                            <p>Прибор имеет 7 базовых программ, одна - комплекс, который можно составить вручную на
+                                основе более чем 3000 терапевтических программ, содержащихся в базе WebWellness.
+                            </p>
+                            <p>Одним прибором может пользоваться вся семья, независимо от возраста и сложности проблемы
+                                в организме.</p>
+                            <p>Прибор работает в комплексе с прибором веб-клиники <b>Life Expert.</b></p>
+                        </div>
+
+                        <div class="col_half col_last nobottommargin notopmargin topmargin-lg">
+                            <a href="SeSKaQfRKgqeM0qT" data-lightbox="iframe" style="position: relative;">
+                                <img src="images/pribors/lbcontact.png" alt="Life Balance" class="center-block" data-animate="fadeInRight">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section  nobottommargin notopmargin nobottompadding" style="background: aliceblue;">
+                    <div class="container clearfix">
+                        <div class="row clearfix">
+                            <div class="heading-block center">
+                                <h2>Life Expert 3</h2>
+                            </div>
+
+                            <div class="col_half nobottommargin notopmargin topmargin-lg">
+                                <ul class="iconlist">
+                                    <li><i class="icon-info"></i> консультационная информация о функциональном состоянии
+                                        организма по 47 органам и системам;</li>
+                                    <li><i class="icon-info"></i> подбираются препараты, способные максимально
+                                        эффективно воздействовать на организм;</li>
+                                    <li><i class="icon-info"></i> определение биологического возраста человека;</li>
+                                    <li><i class="icon-info"></i> определение индекса массы тела</li>
+                                    <li><i class="icon-info"></i> в автоматическом режиме происходит составление
+                                        индивидуального комплекса для версии устройства Life Balance;</li>
+                                    <li><i class="icon-info"></i> наличие специального контейнера позволяет подобрать
+                                        препараты, витаминный комплекс и рацион питания;</li>
+                                    <li><i class="icon-info"></i> подбор препаратов через виртуальный контейнер (база
+                                        данных постоянно пополняется);</li>
+                                    <li><i class="icon-info"></i> выявляется индивидуальная непереносимость какого-либо
+                                        пищевого продукта, согласно результатам тестирования подбираются продукты
+                                        питания, медикаментозные средства, косметика, БАДы;</li>
+                                    <li><i class="icon-info">
+                                        </i> <b>Life Expert 3 не является медицинским прибором, поэтому его можно
+                                            использовать дома без назначения врача.</b> 
+                                </li></ul>
+                            </div>
+
+                            <div class="col_half nobottommargin notopmargin topmargin-lg col_last">
+                                <img src="images/pribors/le3_site.png" alt="Life Expert 3" class="center-block" data-animate="fadeInRight">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="section  nobottommargin notopmargin">
+                    <div class="container clearfix">
+
+                        <div class="col_full nobottommargin col_last ">
+
+
+                            <p>Прибор Life Expert 3.0 является устройством для профессиональной диагностики состояния
+                                организма в домашних условиях. Кроме того, он способен предоставлять информацию о
+                                состоянии здоровья в сфере биорезонансной терапии. Ему потребуется меньше минуты для
+                                измерения показателей, касающихся функциональности каждого органа и систем органов. В
+                                заключение пользователям даются рекомендации о том, как стабилизировать свое состояние и
+                                улучшить показатели</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container clearfix topmargin-lg bottommargin-lg">
+                    <div class="entry-image">
+                        <div style="padding: 56.25% 0 0 0; position: relative">
+                            <div style="height:100%;left:0;position:absolute;top:0;width:100%"><iframe height="100%" width="100%;" src="https://embed.wave.video/GmphMCKg2Nge1NVq" frameborder="0" allow="autoplay; fullscreen" scrolling="no"></iframe></div>
+                        </div>
+
+                        <!--<div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+
+                            <iframe style="" src="https://www.youtube-nocookie.com/embed/RUnUN_nsuvU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid0"></iframe>
+
+                            </iframe>
+                        </div>
+                            -->
+                    </div>
+
+                </div>
+
+
+                <div class="section  nobottommargin notopmargin">
+                    <div class="container clearfix">
+                        <div class="col_full nobottommargin ">
+
+                            <p style="font-size: 30px; font-weight: bold;">Что нового в Life Expert 3.0?</p>
+
+                            <p style="font-size: 30px;">Технологии не стоят на месте, и новый прибор - современный и
+                                улучшенный - открывает новые возможности:</p>
+
+                            <ul>
+                                <li>Восприимчивость организма к БРТ, самодиагностика без больниц и врачей;</li>
+                                <li>Мультитест для проверки состояния всех органов и систем;</li>
+                                <li>Определение рекомендуемой даты следующего тестирования - это важно для регулярной
+                                    самопроверки и своевременного выявления возможных патологий;</li>
+                                <li>Автокомплекс профилактики заболеваний и укрепления иммунитета для поддержания
+                                    крепкого здоровья. Также в программу включен автокомплекс профилактики аллергических
+                                    реакций на внешние раздражители;</li>
+                                <li>Подбор рекомендуемых препаратов по одной или нескольким электронным копиям;</li>
+                                <li>Рекомендации по употреблению воды - вы найдете оптимальный питьевой баланс в
+                                    соответствии с потребностями организма;</li>
+                                <li>Ускоренный тест - проверьте свое здоровье максимально быстро.</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section  nobottommargin notopmargin">
+                    <div class="container clearfix">
+                        <div style="padding: 56.25% 0 0 0; position: relative">
+                            <div style="height:100%;left:0;position:absolute;top:0;width:100%"><iframe height="100%" width="100%;" src="https://embed.wave.video/FUQZfIue4sC3LIvG" frameborder="0" allow="autoplay; fullscreen" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section notopmargin notoppadding nobottommargin">
+                    <div class="container clearfix">
+
+                        <div class="row clearfix">
+                            <div class="heading-block center">
+                                <p class="t500" style="font-size:22px">С компанией WebWellness Вы
+                                    получаете:</p>
+                            </div>
+                        </div>
+
+                        <div class="col_half">
+                            <div class="feature-box fbox-center fbox-outline fbox-effect">
+                                <div class="fbox-icon">
+                                    <i class="icon-line2-star i-alt"></i>
+                                </div>
+                                <h3>Эффективность</h3>
+                                <p>Доказана тысячами положительных результатов</p>
+                            </div>
+                        </div>
+
+                        <div class="col_half col_last">
+                            <div class="feature-box fbox-center fbox-outline fbox-effect">
+                                <div class="fbox-icon">
+                                    <i class="icon-line2-users i-alt"></i>
+                                </div>
+                                <h3>Универсальность</h3>
+                                <p>Приборы можно использовать всей семьей - Десятки тысяч вариантов личных комплексов
+                                    для каждого</p>
+                            </div>
+                        </div>
+
+
+                        <div class="col_half">
+                            <div class="feature-box fbox-center fbox-outline fbox-effect">
+                                <div class="fbox-icon">
+                                    <i class="icon-line2-screen-smartphone i-alt"></i>
+                                </div>
+                                <h3>Портативность</h3>
+                                <p>Прибор с легкостью помещается в небольшой карман</p>
+                            </div>
+                        </div>
+
+                        <div class="col_half col_last">
+                            <div class="feature-box fbox-center fbox-outline fbox-effect">
+                                <div class="fbox-icon">
+                                    <i class="icon-line2-emoticon-smile i-alt"></i>
+                                </div>
+                                <h3>Простоту</h3>
+                                <p>Система очень проста в управлении и не требует специальных навыков</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section parallax nobottommargin notopmargin" style="background-image: url('images/ships.jpg'); padding: 100px 0;" data-stellar-background-ratio="0.3">
+                    <div class="heading-block center nobottomborder nobottommargin" style="max-width: 1000px; margin-left:auto;margin-right:auto;">
+                        <h2>Комплекс является идеальным решением для тех,<br> кто бережет свое здоровье, экономит время
+                            и деньги.</h2>
+                    </div>
+                </div>
+
+                <div class="promo promo-border promo-full nobottommargin">
+                    <div class="container clearfix">
+                        <h3><span>WebWellness</span> - новые технологии на страже здоровья!</h3>
+                        <a target="_blank" href="https://bc.webwellness.net/" class="button button-xlarge button-rounded">Регистрация</a>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <h3 data-lang="ru">Life Balance Contact</h3>
-                <h3 data-lang="en" style="display:none;">Life Balance Contact</h3>
-                <h3 data-lang="de" style="display:none;">Lebensbalance Kontakt</h3>
-                <p data-lang="ru">Óñòðîéñòâî ñ ïðÿìûì êîíòàêòîì äëÿ óñèëåíèÿ ñîáñòâåííûõ ðåñóðñîâ îðãàíèçìà.</p>
-                <p data-lang="en" style="display:none;">Device with direct contact to enhance your body's own resources.</p>
-                <p data-lang="de" style="display:none;">Gerat mit direktem Kontakt zur Starkung der korpereigenen Ressourcen.</p>
+        </section>
+        <!-- #content end -->
+
+
+
+        <!-- Footer
+		============================================= -->
+        <footer id="footer" class="dark">
+
+            <!-- Copyrights
+			============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Технология принадлежит компании WebWellness ©
+                        2025<br> Все права защищены.
+                        <br>
+                        <div class="copyright-links"><a href="/disclamer.php">Legal Disclamer</a> / <a href="/privacy.php">Privacy Policy</a></div>
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <i class="icon-envelope2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bad3d4dcd5facddfd8cddfd6d6d4dfc9c994d4dfce">[email&nbsp;protected]</a>
+                    </div>
+
+                </div>
+
             </div>
-        </div>
+            <!-- #copyrights end -->
+
+        </footer>
+        <!-- #footer end -->
+
     </div>
-</section>
+    <!-- #wrapper end -->
 
-<footer>
-    <div class="container">
-        <p>&copy; 2025 WebWellness. Âñå ïðàâà çàùèùåíû.</p>
-        <p><a href="#">Ïîëèòèêà êîíôèäåíöèàëüíîñòè</a> | <a href="#">Ïðàâîâàÿ èíôîðìàöèÿ</a></p>
-    </div>
-</footer>
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
 
-<script>
-    function setLang(lang) {
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            if (el.getAttribute('data-lang') === lang) {
-                el.style.display = 'block';
-            } else {
-                el.style.display = 'none';
-            }
-        });
-    }
+    <!-- External JavaScripts
+	============================================= -->
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
 
-    // Ïî óìîë÷àíèþ ïîêàçûâàåì ðóññêèé ÿçûê
-    document.addEventListener("DOMContentLoaded", () => setLang('ru'));
-</script>
-</body>
-</html>
+    <!-- Footer Scripts
+	============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+
+
+
+
+<div id="copyrightscp" style="display:none!important;color:#FFFFFF!important;background-color:#FFFFFF!important;opacity:0!important;font-family:Arial,Tahoma,Geneva,Helvetica,sans-serif!important;font-size:1px!important;"><p style="display:none!important;color:#FFFFFF!important;background-color:#FFFFFF!important;opacity:0!important;font-family:Arial,Tahoma,Geneva,Helvetica,sans-serif!important;font-size:1px!important;">SiteCopy - <a style="display:none!important;color:#FFFFFF!important;background-color:#FFFFFF!important;opacity:0!important;font-family:Arial,Tahoma,Geneva,Helvetica,sans-serif!important;font-size:1px!important;" href="https://sitecopy.ru/" title="Онлайн-сервис, где можно скопировать любой сайт и лендинг по ссылке и бесплатно">онлайн-сервис, где можно скопировать любой сайт и лендинг по ссылке и бесплатно</a>. Копирование и создание точной копии Landing page делается целиком и полностью. Можно копировать чужой сайт или интернет-магазин конкурента и переделать под себя. Создать клон и дубликат можно на Тильде, Фигма, ВордПресс или Битрикс.</p><div style="display:none!important;color:#FFFFFF!important;background-color:#FFFFFF!important;opacity:0!important;font-family:Arial,Tahoma,Geneva,Helvetica,sans-serif!important;font-size:1px!important;"></div></div></body></html>
